@@ -8,10 +8,29 @@ using namespace std;
 class Solution
 {
     public:
-    void sort012(int a[], int n)
+    void sort012(int arr[], int n)
     {
         // code here 
-        sort(a,a+n);
+        int cnt0=0;
+        int cnt1=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]==0) cnt0++;
+            if(arr[i]==1) cnt1++;   
+        }
+        for(int i=0;i<n;i++){
+            while(cnt0>0){
+                arr[i]=0;
+                cnt0--;
+                i++;
+            }
+            while(cnt1>0){
+                arr[i]=1;
+                cnt1--;
+                i++;
+            }
+            arr[i]=2;
+        }
+        
     }
     
 };
